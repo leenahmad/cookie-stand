@@ -2,9 +2,12 @@
 
 let allcookie = [];
 let container = document.getElementById('container');
+// let myform = document.getElementById('myform');
+// myform.addEventListener('submit' , addShop);
 let tableEl = document.createElement('table');
 container.appendChild(tableEl);
 let openingHour = ['6am' , '7am', '8am', '9am', '10am', '11am', '12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
+
 
 function Cookie(shop , min ,max, avr){
   this.shopName = shop;
@@ -17,13 +20,29 @@ function Cookie(shop , min ,max, avr){
 
   allcookie.push(this);
 }
-
+console.log(Cookie);
 Cookie.prototype.getrandomNum = function(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min);
+
 };
 
+// function addShop(event){
+//   event.preventDefault();
+//   let shopName = event.target.shopName.value;
+//   let minCustPerHour = event.target.minCustPerHour.value;
+//   let maxCustPerHour = event.target.maxCustPerHour.value;
+//   let avrCookisCustPerHour = event.target.avrCookisCustPerHour.value;
+//   let newShop = new Cookie(shopName,minCustPerHour,maxCustPerHour,avrCookisCustPerHour);
+//   newShop.getCookiesPerHour();
+//   newShop.render();
+// }
+
+// let tableLeg = tableEl.rows.length-1;
+// tableEl.deleteRow(tableLeg);
+
+console.log(addShop);
 Cookie.prototype.getCookiesPerHour = function(){
 
   for(let i =0; i <openingHour.length; i++){
@@ -75,11 +94,30 @@ function createTableHeader(){
   trEl.appendChild(thEl6);
   thEl6.textContent = 'Daily Location Total';
 }
-createTableHeader();
+// let myform = document.getElementById('myform');
+// myform.addEventListener('submit' , addShop);
+
+// function addShop(event){
+//   event.preventDefault();
+//   let shopName = event.target.shopName.value;
+//   let minCustPerHour = event.target.minCustPerHour.value;
+//   let maxCustPerHour = event.target.maxCustPerHour.value;
+//   let avrCookisCustPerHour = event.target.avrCookisCustPerHour.value;
+//   let newShop = new Cookie(shopName,minCustPerHour,maxCustPerHour,avrCookisCustPerHour);
+
+//   tableEl.deleteRow(tableLeg);
+//   let tableLeg = tableEl.rows.length-1;
+//   newShop.getCookiesPerHour();
+//   newShop.render();
+
+// }
+
+
 
 function createTableFooter(){
   let trEl = document.createElement('tr');
   tableEl.appendChild(trEl);
+
   let tdEl1 = document.createElement('td');
   trEl.appendChild(tdEl1);
   tdEl1.textContent = 'Total';
@@ -105,6 +143,26 @@ function createTableFooter(){
   tdEl3.textContent = sumOfDailyTotal;
 
 }
+createTableHeader();
+
+let myform = document.getElementById('myform');
+myform.addEventListener('submit' , addShop);
+
+function addShop(event){
+  event.preventDefault();
+  let shopName = event.target.shopName.value;
+  let minCustPerHour = event.target.minCustPerHour.value;
+  let maxCustPerHour = event.target.maxCustPerHour.value;
+  let avrCookisCustPerHour = event.target.avrCookisCustPerHour.value;
+  let newShop = new Cookie(shopName,minCustPerHour,maxCustPerHour,avrCookisCustPerHour);
+  let tableLeg = tableEl.rows.length-1;
+  tableEl.deleteRow(tableLeg);
+
+  newShop.getCookiesPerHour();
+  newShop.render();
+
+}
+
 
 
 let Seattle = new Cookie('Seattel' , 23 , 65 , 6.3);
