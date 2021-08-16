@@ -160,6 +160,7 @@ function addShop(event){
 
   newShop.getCookiesPerHour();
   newShop.render();
+  createTableFooter();
 
 }
 
