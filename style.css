@@ -10,17 +10,28 @@
   }
 #hour{
   font-size: 100%;
+  color: #af4c8e;
+  }
+  body {
+    font-family: 'Tangerine', serif;
+    font-size: 30px;
   }
 header{
   background-color: rgb(156, 151, 151);
     color:pink;
 
 }
+#address{
+  color: #af4c8e;
+}
 h2{
   text-align: center;
 }
 h1{
   text-align: center;
+}
+h3{
+  color: gray;
 }
 
   footer{
@@ -36,11 +47,6 @@ h1{
     border: 2px solid rgb(235, 198, 198);
     border-radius: 4px;
     padding-left: 5px 
-
-    
-
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
   } 
 
 #myform{
@@ -61,4 +67,8 @@ input[type=submit] {
 
 #box{
  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+footer h3{
+  color: pink;
 }

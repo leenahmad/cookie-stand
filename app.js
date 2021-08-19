@@ -160,7 +160,7 @@ function addShop(event){
 
   newShop.getCookiesPerHour();
   newShop.render();
-
+  createTableFooter();
 }
 
 
@@ -190,6 +190,6 @@ Lima.getrandomNum(11,38);
 Lima.getCookiesPerHour();
 Lima.render();
 
-createTableFooter();
+ createTableFooter();
 console.log(allcookie);
 
